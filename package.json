@@ -3,6 +3,7 @@
 	"author": "Kakha Gujejiani",
 	"description": "I learning node js",
 	"keywords": [ "descriptive", "related", "words", "freecodecamp"],
+	"license": "GEO",
 	"dependencies": {
 		"express": "^4.14.0"
 	},

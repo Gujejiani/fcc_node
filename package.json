@@ -9,7 +9,7 @@
 		"freecodecamp"
 	],
 	"license": "GEO",
-	"version": "1.2.0",
+	"version": "2.10.2",
 	"dependencies": {
 		"express": "^4.14.0",
 		"moment": "2.14.0"

@@ -2,12 +2,17 @@
 	"name": "fcc-learn-npm-package-json",
 	"author": "Kakha Gujejiani",
 	"description": "I learning node js",
-	"keywords": [ "descriptive", "related", "words", "freecodecamp"],
+	"keywords": [
+		"descriptive",
+		"related",
+		"words",
+		"freecodecamp"
+	],
 	"license": "GEO",
 	"version": "1.2.0",
 	"dependencies": {
 		"express": "^4.14.0",
-		"moment":  "2.14.0"
+		"moment": "2.14.0"
 	},
 	"main": "server.js",
 	"scripts": {

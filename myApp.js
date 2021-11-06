@@ -8,6 +8,10 @@ app.get('/', (req, res)=>{
     //  res.send('Hello Expresss')
 })
 
+app.get('/json', (req, res)=>{
+    const message = {message: "Hello Json"}
+    res.json(JSON.stringify(message))
+})
 
 
 console.log("Hello World ", __dirname)

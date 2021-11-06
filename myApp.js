@@ -11,11 +11,11 @@ app.get('/', (req, res)=>{
 
 app.get('/json', (req, res)=>{
     const message = {message: "Hello Json"}
-    res.json({"message": "Hello json"})
+    res.json({"message": process.env.MESSAGE_STYLE === 'uppercase' ? "Hello json": "HELLO JSON"})
 })
 
 
-console.log(process.env.MESSAGE_STYLE)
+console.log(process.env.MESSAGE_STYLE ==='uppercase' )
 console.log("Hello World ", __dirname)
 
 

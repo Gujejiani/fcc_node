@@ -10,7 +10,7 @@ app.get('/', (req, res)=>{
 
 app.get('/json', (req, res)=>{
     const message = {message: "Hello Json"}
-    res.json(JSON.stringify(message))
+    res.json(message)
 })
 
 

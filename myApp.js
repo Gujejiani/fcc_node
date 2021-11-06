@@ -1,5 +1,6 @@
 var express = require('express');
 var app = express();
+require('dotenv').config()
 app.use('/public',express.static(`${__dirname}/public`))
 
 app.get('/', (req, res)=>{
@@ -14,6 +15,7 @@ app.get('/json', (req, res)=>{
 })
 
 
+console.log(process.env.MESSAGE_STYLE)
 console.log("Hello World ", __dirname)
 
 

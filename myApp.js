@@ -40,9 +40,9 @@ app.get('/:word/echo', (req, res)=>{
 
 const getNameHandler = (req, res)=>{
     console.log('its not my fa')
-    const {firstname, lastname} = req.query
+    const {first, last} = req.query
 
-    res.json({name: req.query.firstname + " " + req.query.lastname})
+    res.json({name: first + " " + last})
 }
 // app.get('/name', getNameHandler)
 app.route('/name').get(getNameHandler)

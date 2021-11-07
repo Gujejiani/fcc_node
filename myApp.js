@@ -3,6 +3,11 @@ var app = express();
 require('dotenv').config()
 app.use('/public',express.static(`${__dirname}/public`))
 
+app.use((req, res, next)=>{
+    console.log(req.method, req.ip, req.path)
+    next()
+})
+
 app.get('/', (req, res)=>{
     console.log(__dirname)
      res.sendFile(`${__dirname}/views/index.html`)

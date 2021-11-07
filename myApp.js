@@ -14,7 +14,7 @@ app.get('/', (req, res)=>{
     //  res.send('Hello Expresss')
 })
 
-app.get('now', (req, res, next)=>{
+app.get('/now', (req, res, next)=>{
     req.time = new Date().toString()
     next()
 }, (req, res)=>{

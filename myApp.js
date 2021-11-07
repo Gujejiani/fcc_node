@@ -33,6 +33,11 @@ app.get('/json', (req, res)=>{
 })
 
 
+app.get('/:word/echo', (req, res)=>{
+    const word = req.params.word
+    res.json({'echo': word})
+})
+
 console.log(process.env.MESSAGE_STYLE ==='uppercase' )
 console.log("Hello World ", __dirname)
 

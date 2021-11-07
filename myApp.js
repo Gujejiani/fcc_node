@@ -43,7 +43,7 @@ const getNameHandler = (req, res)=>{
     const {firstname, lastname} = req.query
 
     res.json({
-        name: `${firstname} ${lastname}`
+        "name": `${firstname} ${lastname}`
     })
 }
 // app.get('/name', getNameHandler)

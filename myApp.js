@@ -42,9 +42,7 @@ const getNameHandler = (req, res)=>{
     console.log('its not my fa')
     const {firstname, lastname} = req.query
 
-    res.json({
-        name: firstname + " " + lastname
-    })
+    res.json({name: req.query.firstname + " " + req.query.lastname})
 }
 // app.get('/name', getNameHandler)
 app.route('/name').get(getNameHandler)

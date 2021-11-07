@@ -5,7 +5,7 @@ const bodyParser = require('body-parser')
 require('dotenv').config()
 
 
-app.use(bodyParser({extended: false}))
+app.use(bodyParser.urlencoded({extended: false}))
 
 app.use(bodyParser.json())
 

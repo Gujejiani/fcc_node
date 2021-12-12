@@ -1,109 +1,72 @@
-var express = require('express');
-var app = express();
+require('dotenv').config();
+const mongoDb = require('mongodb')
+const mongoose = require('mongoose')
+mongoose.connect(process.env.MONGO_URI, { useNewUrlParser: true, useUnifiedTopology: true }).then(()=> console.log('connected to mongodb')).catch(err=> console.log(err));
 
-const bodyParser = require('body-parser')
-require('dotenv').config()
+let Person;
 
+const createAndSavePerson = (done) => {
+  done(null /*, data*/);
+};
 
-app.use(bodyParser.urlencoded({extended: false}))
+const createManyPeople = (arrayOfPeople, done) => {
+  done(null /*, data*/);
+};
 
-app.use(bodyParser.json())
+const findPeopleByName = (personName, done) => {
+  done(null /*, data*/);
+};
 
+const findOneByFood = (food, done) => {
+  done(null /*, data*/);
+};
 
-app.use('/public',express.static(`${__dirname}/public`))
+const findPersonById = (personId, done) => {
+  done(null /*, data*/);
+};
 
-app.use((req, res, next)=>{
-    console.log(req.method,req.path, '- '+ req.ip, )
-    next()
-})
+const findEditThenSave = (personId, done) => {
+  const foodToAdd = "hamburger";
 
-app.get('/', (req, res)=>{
-    console.log(__dirname)
-     res.sendFile(`${__dirname}/views/index.html`)
-    //  res.send('Hello Expresss')
-})
+  done(null /*, data*/);
+};
 
-app.get('/now', (req, res, next)=>{
-    req.time = new Date().toString()
-    next()
-}, (req, res)=>{
-    res.json({time: req.time})
-})
+const findAndUpdate = (personName, done) => {
+  const ageToSet = 20;
 
-app.get('/json', (req, res)=>{
-    let JsonResponse = {"message": "Hello json"}
-    if (process.env.MESSAGE_STYLE === "uppercase") {
-        JsonResponse.message =   JsonResponse.message.toUpperCase();
-      
-      } 
-      
+  done(null /*, data*/);
+};
 
-    res.json(JsonResponse)
-})
+const removeById = (personId, done) => {
+  done(null /*, data*/);
+};
 
+const removeManyPeople = (done) => {
+  const nameToRemove = "Mary";
 
-app.get('/:word/echo', (req, res)=>{
-    const word = req.params.word
-    res.json({'echo': word})
-})
+  done(null /*, data*/);
+};
 
-const getNameHandler = (req, res)=>{
-    console.log('its not my fa')
-    const {first, last} = req.query
+const queryChain = (done) => {
+  const foodToSearch = "burrito";
 
-    res.json({name: first + " " + last})
-}
-// app.get('/name', getNameHandler)
+  done(null /*, data*/);
+};
 
-const sendName = (req, res,)=>{
-    const first = req.body?.first
-    const last = req.body.last
-    console.log('works')
-    console
-    res.json({name: first + " " + last})
-   
-}
+/** **Well Done !!**
+/* You completed these challenges, let's go celebrate !
+ */
 
+//----- **DO NOT EDIT BELOW THIS LINE** ----------------------------------
 
-
-
-app.route('/name').get(getNameHandler).post(sendName)
-
-
-
-
-
-console.log(process.env.MESSAGE_STYLE ==='uppercase' )
-console.log("Hello World ", __dirname)
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
- module.exports = app;
+exports.PersonModel = Person;
+exports.createAndSavePerson = createAndSavePerson;
+exports.findPeopleByName = findPeopleByName;
+exports.findOneByFood = findOneByFood;
+exports.findPersonById = findPersonById;
+exports.findEditThenSave = findEditThenSave;
+exports.findAndUpdate = findAndUpdate;
+exports.createManyPeople = createManyPeople;
+exports.removeById = removeById;
+exports.removeManyPeople = removeManyPeople;
+exports.queryChain = queryChain;

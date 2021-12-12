@@ -54,7 +54,20 @@ const getNameHandler = (req, res)=>{
     res.json({name: first + " " + last})
 }
 // app.get('/name', getNameHandler)
-app.route('/name').get(getNameHandler)
+
+const sendName = (req, res,)=>{
+    const first = req.body?.first
+    const last = req.body.last
+    console.log('works')
+    console
+    res.json({name: first + " " + last})
+   
+}
+
+
+
+
+app.route('/name').get(getNameHandler).post(sendName)
 
 
 

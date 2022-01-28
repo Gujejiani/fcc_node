@@ -71,11 +71,20 @@ const findPersonById = (personId, done) => {
 
 };
 
-const findEditThenSave = (personId, done) => {
-  const foodToAdd = "hamburger";
+const findEditThenSave = async (personId, done) => {
 
-  done(null /*, data*/);
+  const person = await Person.findById(personId)
+    console.log('----')
+  console.log(person)
+
+
+  const foodToAdd = "hamburger";
+  person.favoriteFoods.push(foodToAdd)
+  console.log(person)
+ let data =  await person.save()
+  done(null ,data);
 };
+
 
 const findAndUpdate = (personName, done) => {
   const ageToSet = 20;
